@@ -1,7 +1,7 @@
 {
   "name": "vue-i18n-fetch",
   "version": "1.0.0",
-  "description": "Store and load vue-i18n messages remotely",
+  "description": "Async store and load vue-i18n messages",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "type": "module",

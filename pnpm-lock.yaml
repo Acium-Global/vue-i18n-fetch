@@ -2,11 +2,11 @@ lockfileVersion: 5.3
 
 specifiers:
   eslint: ^7.24.0
-  tsc: ^1.20150623.0
+  typescript: ^4.2.4
 
 devDependencies:
   eslint: 7.24.0
-  tsc: 1.20150623.0
+  typescript: 4.2.4
 
 packages:
 
@@ -740,12 +740,6 @@ packages:
     resolution: {integrity: sha1-f17oI66AUgfACvLfSoTsP8+lcLQ=}
     dev: true
 
-  /tsc/1.20150623.0:
-    resolution: {integrity: sha1-Trw8d04WkUjLx2inNCUz8ILHpuU=}
-    deprecated: you probably meant to install typescript
-    hasBin: true
-    dev: true
-
   /type-check/0.4.0:
     resolution: {integrity: sha512-XleUoc9uwGXqjWwXaUTZAmzMcFZ5858QA2vvx1Ur5xIcixXIP+8LnFDgRplU30us6teqdlskFfu+ae4K79Ooew==}
     engines: {node: '>= 0.8.0'}
@@ -761,6 +755,12 @@ packages:
   /type-fest/0.8.1:
     resolution: {integrity: sha512-4dbzIzqvjtgiM5rw1k5rEHtBANKmdudhGyBEajN01fEyhaAIhsoKNy6y7+IN93IfpFtwY9iqi7kD+xwKhQsNJA==}
     engines: {node: '>=8'}
+    dev: true
+
+  /typescript/4.2.4:
+    resolution: {integrity: sha512-V+evlYHZnQkaz8TRBuxTA92yZBPotr5H+WhQ7bD3hZUndx5tGOa1fuCgeSjxAzM1RiN5IzvadIXTVefuuwZCRg==}
+    engines: {node: '>=4.2.0'}
+    hasBin: true
     dev: true
 
   /uri-js/4.4.1:

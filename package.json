@@ -4,6 +4,7 @@
   "description": "Store and load vue-i18n messages remotely",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
+  "type": "module",
   "files": [
     "/dist"
   ],
@@ -58,6 +59,6 @@
   },
   "devDependencies": {
     "eslint": "^7.24.0",
-    "tsc": "^1.20150623.0"
+    "typescript": "^4.2.4"
   }
 }

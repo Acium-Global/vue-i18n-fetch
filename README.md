@@ -54,7 +54,7 @@ Just decorates i18n with changed behavior.
 
 <script setup>
 import { useI18n } from 'vue-i18n';
-import { withMessagesFetch } from 'vue-i18n-fetch';
+import withMessagesFetch from 'vue-i18n-fetch';
 
 const fetchMessages = (locale) => Promise.resolve({
     messages: {
@@ -83,7 +83,7 @@ You can parse called messages and submit it somewhere, useful for CI/CD pipeline
 
 <script setup>
 import { useI18n } from 'vue-i18n';
-import { withMessagesFetch } from 'vue-i18n-fetch';
+import withMessagesFetch from 'vue-i18n-fetch';
 import fetch from 'cross-fetch';
 
 const fetchMessages = (locale, defaultMessages) => {

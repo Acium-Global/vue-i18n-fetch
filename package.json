@@ -1,0 +1,31 @@
+{
+  "name": "vue-i18n-fetch",
+  "version": "1.0.0",
+  "description": "Store and load vue-i18n messages remotely",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/klarkc/vue-i18n-fetch.git"
+  },
+  "keywords": [
+    "Vue",
+    "i18n",
+    "vue-i18n",
+    "localization",
+    "translate",
+    "server",
+    "api"
+  ],
+  "author": {
+    "name": "Walker Leite",
+    "email": "walker@praiseweb.com.br"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/klarkc/vue-i18n-fetch/issues"
+  },
+  "homepage": "https://github.com/klarkc/vue-i18n-fetch#readme"
+}

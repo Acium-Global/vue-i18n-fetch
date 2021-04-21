@@ -1,0 +1,15 @@
+lockfileVersion: 5.3
+
+specifiers:
+  tsc: ^1.20150623.0
+
+devDependencies:
+  tsc: 1.20150623.0
+
+packages:
+
+  /tsc/1.20150623.0:
+    resolution: {integrity: sha1-Trw8d04WkUjLx2inNCUz8ILHpuU=}
+    deprecated: you probably meant to install typescript
+    hasBin: true
+    dev: true

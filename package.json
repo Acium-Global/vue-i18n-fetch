@@ -2,7 +2,14 @@
   "name": "vue-i18n-fetch",
   "version": "1.0.0",
   "description": "Store and load vue-i18n messages remotely",
-  "main": "src/index.js",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "/dist"
+  ],
+  "engines": {
+    "node": ">=8"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -28,5 +35,8 @@
   "bugs": {
     "url": "https://github.com/klarkc/vue-i18n-fetch/issues"
   },
-  "homepage": "https://github.com/klarkc/vue-i18n-fetch#readme"
+  "homepage": "https://github.com/klarkc/vue-i18n-fetch#readme",
+  "devDependencies": {
+    "tsc": "^1.20150623.0"
+  }
 }

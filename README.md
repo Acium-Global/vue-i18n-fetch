@@ -73,7 +73,7 @@ const setLocale = (locale) => {
 
 ### Storing messages asynchronously
 
-You can parse called messages and submit it somewhere, useful for CI/CD pipelines.
+You can parse called messages and submit it somewhere, useful for CI/CD pipelines to extract added/updated messages.
 
 ```html
 <!-- App.vue -->

@@ -108,7 +108,7 @@ const submitMessages = (locale, messages) => {
 const { t } = withMessagesFetch(
   i18n,
   fetchMessages,
-  windowsubmitMessages,
+  submitMessages,
 );
 const setLocale = (locale) => {
   i18n.locale.value = locale;

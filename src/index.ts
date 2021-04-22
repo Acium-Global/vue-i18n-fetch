@@ -25,7 +25,7 @@ function buildWatcher(ref, { onChange, queueCleanup }) {
 
 function buildMessagesLoader(i18n, fetchMessages) {
   const { locale, setLocaleMessage } = i18n;
-  const updateI18N = ({ messages }) => {
+  const updateI18N = (messages) => {
     setLocaleMessage(unref(locale), messages);
   };
   return () => fetchMessages(locale)

@@ -71,7 +71,7 @@ const setLocale = (locale) => {
 
 ### Storing messages asynchronously
 
-You can parse called messages and submit it somewhere, useful for CI/CD pipelines to extract added/updated messages.
+You can submit default messages to somewhere, this way CI/CD pipelines can extract added/updated messages.
 
 ```html
 <!-- App.vue -->
@@ -100,13 +100,15 @@ const i18n = useI18n({
   locale defined in useI18N 
 */
 const submitMessages = (locale, messages) => {
+  if(typeof window === 'undefined') {
     /* submit locale messages */
+  }
 };
 
 const { t } = withMessagesFetch(
   i18n,
   fetchMessages,
-  submitMessages,
+  windowsubmitMessages,
 );
 const setLocale = (locale) => {
   i18n.locale.value = locale;

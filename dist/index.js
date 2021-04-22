@@ -1,42 +1,53 @@
-import { onUnmounted, onMounted, watch, unref, } from 'vue-demi';
+import { onMounted, onUnmounted, watch, unref, } from 'vue-demi';
 function buildTDecorator(i18n) {
     return i18n.t;
 }
-function buildLocaleWatcher(locale, _a) {
+function buildWatcher(ref, _a) {
     var onChange = _a.onChange, queueCleanup = _a.queueCleanup;
-    var unwatchLocale;
+    var unwatch;
     queueCleanup(function () {
-        if (unwatchLocale) {
-            unwatchLocale();
+        if (unwatch) {
+            unwatch();
         }
     });
     return function () {
         if (onChange) {
-            unwatchLocale = watch(locale, onChange, {
+            unwatch = watch(ref, onChange, {
                 immediate: true,
             });
         }
     };
 }
-function buildMessagesLoader(i18n, _a) {
-    var fetchMessages = _a.fetchMessages;
+function buildMessagesLoader(i18n, fetchMessages) {
+    var locale = i18n.locale, setLocaleMessage = i18n.setLocaleMessage;
     var updateI18N = function (_a) {
         var messages = _a.messages;
-        i18n.setLocaleMessage(unref(i18n.locale), messages);
+        setLocaleMessage(unref(locale), messages);
     };
-    return function () { return fetchMessages(i18n.locale).then(updateI18N); };
+    return function () { return fetchMessages(locale)
+        .then(updateI18N); };
 }
-export default function withMessagesFetch(i18n, fetchMessages) {
-    var isNonDefaultLocale = function () { return !['en-US', null, undefined].includes(unref(i18n.locale)); };
-    var loadMessages = buildMessagesLoader(i18n, {
-        fetchMessages: fetchMessages,
+function buildMessagesSender(i18n, submitMessages) {
+    return function () {
+        var msgs = unref(i18n.messages);
+        var msgKeys = Object.keys(msgs);
+        return Promise.all(msgKeys.map(function (msgKey) { return submitMessages(msgKey, msgs[msgKey]); }));
+    };
+}
+export default function withMessagesFetch(i18n, fetchMessages, submitMessages) {
+    var loadMessages = buildMessagesLoader(i18n, fetchMessages);
+    var sendMessages = buildMessagesSender(i18n, submitMessages);
+    var watchLocale = buildWatcher(i18n.locale, {
+        onChange: loadMessages,
+        queueCleanup: onUnmounted,
     });
-    var watchLocale = buildLocaleWatcher(i18n.locale, {
-        onChange: function () { return isNonDefaultLocale() && loadMessages(); },
+    var watchMessages = buildWatcher(i18n.messages, {
+        onChange: sendMessages,
         queueCleanup: onUnmounted,
     });
     onMounted(function () {
         watchLocale();
+        watchMessages();
     });
     return {
         t: buildTDecorator(i18n),

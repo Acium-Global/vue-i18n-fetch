@@ -1,5 +1,5 @@
 import type { Composer } from 'vue-i18n';
-export default function withMessagesFetch(i18n: Composer, fetchMessages: any): {
+export default function withMessagesFetch(i18n: Composer, fetchMessages: any, submitMessages: any): {
     t: {
         (key: string | number): string;
         (key: string | number, plural: number, options?: import("vue-i18n").TranslateOptions): string;

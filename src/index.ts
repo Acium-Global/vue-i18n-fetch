@@ -49,15 +49,17 @@ export default function withMessagesFetch(i18n: Composer, fetchMessages, submitM
     onChange: loadMessages,
     queueCleanup: onUnmounted,
   });
-  const watchMessages = buildWatcher(i18n.messages, {
-    onChange: sendMessages,
-    queueCleanup: onUnmounted,
-  });
-
   onMounted(() => {
     watchLocale();
-    watchMessages();
   });
+
+  if (submitMessages) {
+    const watchMessages = buildWatcher(i18n.messages, {
+      onChange: sendMessages,
+      queueCleanup: onUnmounted,
+    });
+    onMounted(watchMessages);
+  }
 
   return {
     t: buildTDecorator(i18n),

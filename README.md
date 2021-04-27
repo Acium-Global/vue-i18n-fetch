@@ -57,10 +57,8 @@ import { useI18n } from 'vue-i18n';
 import withMessagesFetch from 'vue-i18n-fetch';
 
 const fetchMessages = (locale) => Promise.resolve({
-    messages: {
-        title: 'Server gathered title',
-        lorem: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit'
-    }
+  title: 'Server gathered title',
+  lorem: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit'
 })
 
 const i18n = useI18n();
@@ -73,12 +71,12 @@ const setLocale = (locale) => {
 
 ### Storing messages asynchronously
 
-You can parse called messages and submit it somewhere, useful for CI/CD pipelines to extract added/updated messages.
+You can submit default messages to somewhere, this way CI/CD pipelines can extract added/updated messages.
 
 ```html
 <!-- App.vue -->
 <template>
-  <div>{{ t('title', {default: 'My Title'}) }}</div>
+  <div>{{ t('title') }}</div>
 </template>
 
 <script setup>
@@ -86,16 +84,32 @@ import { useI18n } from 'vue-i18n';
 import withMessagesFetch from 'vue-i18n-fetch';
 import fetch from 'cross-fetch';
 
-const fetchMessages = (locale, defaultMessages) => {
-    // rendering on server side
-    if (typeof window === 'undefined') {
-        /* submit defaultMessages and return saved messages promise */
-    } else {
-        /* just fetch the messages */
+const i18n = useI18n({
+  locale: en,
+  messages: {
+    en: {
+      default: 'My Title'
     }
+  }
+})
+
+/* ... */
+
+/*
+  submitMessages is called for every
+  locale defined in useI18N 
+*/
+const submitMessages = (locale, messages) => {
+  if(typeof window === 'undefined') {
+    /* submit locale messages */
+  }
 };
 
-const { t } = withMessagesFetch(i18n, fetchMessages);
+const { t } = withMessagesFetch(
+  i18n,
+  fetchMessages,
+  submitMessages,
+);
 const setLocale = (locale) => {
   i18n.locale.value = locale;
 };

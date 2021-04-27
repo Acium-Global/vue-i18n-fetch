@@ -72,13 +72,6 @@
     }
   },
   "release-it": {
-    "publishConfig": {
-      "access": "public",
-      "registry": "https://registry.npmjs.org"
-    },
-    "npm": {
-      "skipChecks": true
-    },
     "plugins": {
         "@release-it/conventional-changelog": {
             "preset": "angular",

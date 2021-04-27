@@ -29,5 +29,6 @@ jobs:
           git config user.name "${GITHUB_ACTOR}"
           git config user.email "${GITHUB_ACTOR}@users.noreply.github.com"
       - run: npm install --no-save
+      - run: npm run build
       - run: echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" > .npmrc
       - run: npm run release -- --npm.skipChecks --verbose

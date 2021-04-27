@@ -11,6 +11,10 @@ charset = utf-8
 trim_trailing_whitespace = false
 insert_final_newline = false
 
+[*.{json,yml,yaml,toml}]
+indent_style = space
+indent_size = 2
+
 [*.{js,jsx,ts,tsx}]
 indent_style = space
 indent_size = 2

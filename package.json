@@ -41,6 +41,7 @@
   },
   "homepage": "https://github.com/klarkc/vue-i18n-fetch#readme",
   "eslintConfig": {
+    "root": true,
     "env": {
       "browser": true,
       "es2021": true

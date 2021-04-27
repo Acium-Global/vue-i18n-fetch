@@ -12,4 +12,5 @@ jobs:
         with:
           path: '**/node_modules'
           key: ${{ runner.os }}-modules-${{ hashFiles('**/package-lock.json') }}
+      - run: npm install --no-save
       - run: npm run lint

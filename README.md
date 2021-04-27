@@ -11,19 +11,19 @@ Currently this package is only compatible with [Vue I18n v9](https://vue-i18n.in
 **NPM**
 
 ```bash
-npm install --save klarkc/vue-i18n-fetch
+npm install --save vue-i18n-fetch
 ```
 
 **Yarn**
 
 ```bash
-yarn add klarkc/vue-i18n-fetch
+yarn add vue-i18n-fetch
 ```
 
 **PNPM**
 
 ```bash
-pnpm add klarkc/vue-i18n-fetch
+pnpm add vue-i18n-fetch
 ```
 
 ## Usage

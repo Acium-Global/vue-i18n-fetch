@@ -9,7 +9,6 @@ on:
   workflow_dispatch:
 jobs:
   release:
-    runs-on: self-hosted
     steps:
     - uses: actions/checkout@v2
       with:

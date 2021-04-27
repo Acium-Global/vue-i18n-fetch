@@ -1,7 +1,7 @@
 name: Lint
 on: pull_request
 jobs:
-  site-test:
+  lint:
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v1
@@ -17,8 +17,7 @@ jobs:
             ${{ runner.os }}-build-${{ env.cache-name }}-${{ matrix.node-version }}-
       - uses: pnpm/action-setup@v2.0.1
         with:
-            version: 6.0.2
             run_install: |
-            - recursive: true
-                args: [--frozen-lockfile, --strict-peer-dependencies]
+                - recursive: true
+                    args: [--frozen-lockfile, --strict-peer-dependencies]
       - run: pnpm lint

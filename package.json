@@ -1,6 +1,6 @@
 {
   "name": "vue-i18n-fetch",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Async store and load vue-i18n messages",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",

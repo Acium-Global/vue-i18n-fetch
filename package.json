@@ -60,7 +60,7 @@
     "rules": {}
   },
   "dependencies": {
-    "vue-demi": "^0.7.5",
+    "vue-demi": "git://github.com/klarkc/vue-demi.git",
     "vue-i18n": "9"
   },
   "peerDependencies": {

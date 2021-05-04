@@ -1,5 +1,5 @@
 import {
-  onMounted, onUnmounted, watch, unref,
+  onUnmounted, watch, unref,
 } from 'vue-demi';
 import type { Composer } from 'vue-i18n';
 
@@ -49,16 +49,14 @@ export default function withMessagesFetch(i18n: Composer, fetchMessages, submitM
     onChange: loadMessages,
     queueCleanup: onUnmounted,
   });
-  onMounted(() => {
-    watchLocale();
-  });
+  watchLocale();
 
   if (submitMessages) {
     const watchMessages = buildWatcher(i18n.messages, {
       onChange: sendMessages,
       queueCleanup: onUnmounted,
     });
-    onMounted(watchMessages);
+    watchMessages();
   }
 
   return {

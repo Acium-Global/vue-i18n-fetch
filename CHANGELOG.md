@@ -1,3 +1,10 @@
+## [1.2.3](https://github.com/klarkc/vue-i18n-fetch/compare/v1.2.2...v1.2.3) (2021-05-04)
+
+
+### Bug Fixes
+
+* watch on setup instead of on mounted to allow ssr ([073f099](https://github.com/klarkc/vue-i18n-fetch/commit/073f0993b120680726c664c010e5e99a0a7610fe))
+
 ## [1.2.2](https://github.com/klarkc/vue-i18n-fetch/compare/v1.2.1...v1.2.2) (2021-04-29)
 
 ## [1.2.1](https://github.com/klarkc/vue-i18n-fetch/compare/v1.1.0...v1.2.1) (2021-04-27)

@@ -1,3 +1,10 @@
+# [1.3.0](https://github.com/klarkc/vue-i18n-fetch/compare/v1.2.3...v1.3.0) (2021-05-18)
+
+
+### Features
+
+* update vue-demi to upstream ([0312423](https://github.com/klarkc/vue-i18n-fetch/commit/03124236e975d7119c4e755213e009ed8485b774))
+
 ## [1.2.3](https://github.com/klarkc/vue-i18n-fetch/compare/v1.2.2...v1.2.3) (2021-05-04)
 
 

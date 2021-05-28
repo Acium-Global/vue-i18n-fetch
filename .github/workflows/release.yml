@@ -31,4 +31,4 @@ jobs:
       - run: npm install --no-save
       - run: npm run build
       - run: echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" > .npmrc
-      - run: npm run release -- --verbose --npm.skipChecks
+      - run: npm run release -- --verbose --npm.skipChecks --no-git.requireCleanWorkingDir

@@ -1,3 +1,10 @@
+## [1.3.1](https://github.com/klarkc/vue-i18n-fetch/compare/v1.3.0...v1.3.1) (2021-05-28)
+
+
+### Bug Fixes
+
+* lock vue-demi version to fix [#3](https://github.com/klarkc/vue-i18n-fetch/issues/3) ([d3ff320](https://github.com/klarkc/vue-i18n-fetch/commit/d3ff3202fb371ca33aa0f79dd65c17396c8c69fc))
+
 # [1.3.0](https://github.com/klarkc/vue-i18n-fetch/compare/v1.2.3...v1.3.0) (2021-05-18)
 
 
